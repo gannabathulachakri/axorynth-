@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-neon-cyan: #00f2ff;
+  --color-neon-purple: #bc13fe;
+  --color-neon-pink: #ff00bd;
+  --color-neon-blue: #2d7dfa;
+  
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-scan: scan 3s linear infinite;
+  --animate-pulse-glow-cyan: pulse-glow-cyan 3s ease-in-out infinite;
+  --animate-pulse-glow-purple: pulse-glow-purple 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-cyan {
+  0%, 100% { text-shadow: 0 0 10px rgba(0, 242, 255, 0.3), 0 0 20px rgba(0, 242, 255, 0.1); }
+  50% { text-shadow: 0 0 20px rgba(0, 242, 255, 0.6), 0 0 35px rgba(0, 242, 255, 0.3); }
+}
+
+@keyframes pulse-glow-purple {
+  0%, 100% { text-shadow: 0 0 10px rgba(188, 19, 254, 0.3), 0 0 20px rgba(188, 19, 254, 0.1); }
+  50% { text-shadow: 0 0 20px rgba(188, 19, 254, 0.6), 0 0 35px rgba(188, 19, 254, 0.3); }
+}
+
+@layer base {
+  :root {
+    --background: 240 10% 2%;
+    --foreground: 0 0% 100%;
+  }
+
+  body {
+    @apply bg-[#020204] text-white selection:bg-neon-cyan/30 selection:text-white overflow-x-hidden antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-[16px] border border-white/[0.08];
+  }
+  
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-[16px] border border-white/[0.08] rounded-xl;
+  }
+
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-2xl border border-white/5;
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.2);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 10px rgba(188, 19, 254, 0.5), 0 0 20px rgba(188, 19, 254, 0.2);
+  }
+
+  .neon-text-cyan {
+    @apply text-neon-cyan;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+  }
+
+  .animate-glow-cyan {
+    @apply animate-pulse-glow-cyan;
+  }
+
+  .animate-glow-purple {
+    @apply animate-pulse-glow-purple;
+  }
+
+  .neon-border {
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+  }
+
+  .bg-grid {
+    background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .noise {
+    background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+    opacity: 0.05;
+  }
+}
+
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(200%); }
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full hover:bg-neon-cyan/50 transition-colors;
+}
+

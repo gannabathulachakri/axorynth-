@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Axorynth AI
 
-# Run and deploy your AI Studio app
+Axorynth AI is an AI-powered web development, UI/UX design, trading MVP, and AI services startup website built with TypeScript, Vite, and modern web animations.
 
-This contains everything you need to run your app locally.
+## Live Demo
 
-View your app in AI Studio: https://ai.studio/apps/78cdd5b5-db3c-431d-9047-33de4b038fce
+https://axorynth.vercel.app
+
+## Features
+
+- AI-based web development showcase
+- AI UI/UX design services
+- AI trading MVP and automation service sections
+- Modern startup landing page design
+- Smooth animations and premium visual effects
+- Responsive layout for desktop, tablet, and mobile
+- Built with TypeScript and Vite
+
+## Tech Stack
+
+- TypeScript
+- Vite
+- CSS
+- Gemini API integration
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+### 1. Clone the repository
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+git clone https://github.com/gannabathulachakri/axorynth-.git
+cd axorynth-
